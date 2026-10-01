@@ -1,0 +1,38 @@
+body{
+    background-color:white;
+}
+.container{
+    max-width:900px;
+    width:100%;
+    margin:auto;
+    border:1px solid black;
+    border-radius:10px;
+}
+h1{
+    text-align:center;
+    font-size:50px;
+}
+#totalExpense{
+    margin:10px;
+    margin-left:175px;
+    margin-bottom:20px;
+    font-size:20px;
+}
+.input{
+    display:flex;
+    justify-content:center;
+    gap:5px;
+}
+.input input{
+    width:25%;
+    padding:10px;
+    border:1px solid black;
+    border-radius:5px;
+}
+#addBtn{
+    border:none;
+    background-color:red;
+    color:black;
+    border-radius:5px;
+    width:6%;
+}

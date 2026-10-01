@@ -32,7 +32,7 @@ function createExpense(Expens){
 
     amount+=Number(amt);
     totalExpense.textContent="Total Expense : " + amount;
-    tasks.innerText=name + amt;
+    tasks.innerText=name + " :  "+ amt;
 
     box.appendChild(tasks)
     box.appendChild(editBtn);
@@ -42,6 +42,9 @@ function createExpense(Expens){
     editBtn.addEventListener("click",()=> {
         let newName=prompt("Enter New Input");
         let newAmt=prompt("Enter new value");
+        if(newName===null || newName.trim()==="" || newAmt===null || newAmt.trim()===""){
+            return;
+        }
 
         amount-=Number(amt);
         amount+=Number(newAmt);
