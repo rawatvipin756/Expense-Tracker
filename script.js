@@ -5,9 +5,20 @@ let addBtn=document.getElementById("addBtn");
 let allTasks=document.getElementById("allTasks");
 
 let amount=0;
-addBtn.addEventListener("click",()=> {
-    let name=inputText.value;
-    let amt=inputAmt.value;
+
+let Expense=[];
+let Expens=localStorage.getItem("Expense");
+if(Expens!==null){
+    Expense=JSON.parse(Expens);
+    console.log(Expense);
+}
+for(let i=0;i<Expense.length;i++){
+    createExpense(Expense[i]);
+}
+
+function createExpense(Expens){
+    let name=Expens.text;
+    let amt=Expens.number;
     let tasks=document.createElement("p");
     let editBtn=document.createElement("button");
     let deleteBtn=document.createElement("button");
@@ -31,19 +42,45 @@ addBtn.addEventListener("click",()=> {
     editBtn.addEventListener("click",()=> {
         let newName=prompt("Enter New Input");
         let newAmt=prompt("Enter new value");
+
         amount-=Number(amt);
         amount+=Number(newAmt);
         amt=newAmt;
+
+        Expens.text = newName;
+        Expens.number = newAmt;
+
         totalExpense.textContent="Total Expense : " + amount;
         tasks.innerText=newName + newAmt;
+        localStorage.setItem("Expense",JSON.stringify(Expense));
     });
 
     deleteBtn.addEventListener("click",()=> {
         box.remove();
+
         amount-=Number(amt);
         totalExpense.textContent="Total Expense : " + amount;
-    });
 
-    // inputText.value="";
-    // inputAmt.value="";
+        let index=Expense.indexOf(Expens);
+        Expense.splice(index,1);
+        localStorage.setItem("Expense",JSON.stringify(Expense));
+    });
+}
+
+addBtn.addEventListener("click",()=> {
+    if(inputText.value.trim()==""){
+        alert("Enter valid value");
+        return;
+    }
+    let newExpense={
+        text:inputText.value.trim(),
+        number:inputAmt.value
+    }
+
+    Expense.push(newExpense)
+    localStorage.setItem("Expense",JSON.stringify(Expense));
+    createExpense(newExpense);
+
+    inputText.value="";
+    inputAmt.value="";
 });
