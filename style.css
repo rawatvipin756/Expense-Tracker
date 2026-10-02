@@ -8,6 +8,7 @@ body{
     border-radius:10px;
     margin:auto;
     background-color:oldlace;
+    margin-top:40px;
 }
 h1{
     text-align:center;
@@ -50,9 +51,58 @@ table{
     padding:10px;
     margin-bottom:20px;
 }
-tr{
-}
-table td{
+table tr{
     text-align:center;
 }
+table td { 
+    padding: 14px 16px; 
+    border-bottom: 1px solid #e5e5e5; 
+    font-size: 16px; 
+}
+table th{
+    padding:20px;
+    font-size:18px;
+}
+table button{
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 13px; 
+    font-weight: 600;
+    margin-right: 6px;
+}
+table button:first-child { 
+    background: #e8e8e8; 
+    color: #222; 
+}
+table button:last-child { 
+    background: #222; 
+    color: white; 
+}
 
+@media(max-width:768px){
+    .container{
+        max-width:500px;
+    }
+    #inputText{
+        display:block;
+    }
+}
+@media(max-width:400px){
+    .container{
+        margin:auto;
+    }
+    .input{
+        display:grid;
+        grid-template-columns:1fr;
+        width:100%;
+        min-width:300px;
+    }
+    .input input,
+    .input button {
+        width: 90%;
+        box-sizing: border-box;
+        padding:20px;
+    }
+}

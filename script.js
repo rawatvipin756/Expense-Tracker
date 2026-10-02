@@ -30,7 +30,7 @@ function createExpense(Expens){
     let deleteBtn=document.createElement("button");
 
     expenseCell.innerText = name;
-    amtCell.innerText = amt;
+    amtCell.innerText = "₹ " + amt;
 
     editBtn.innerText="Edit";
     deleteBtn.innerText="Delete";
@@ -42,7 +42,7 @@ function createExpense(Expens){
     deleteBtn.type = "button";
 
     amount+=Number(amt);
-    totalExpense.textContent="Total Expense : " + amount;
+    totalExpense.textContent="Total Expense : ₹ " + amount;
 
     row.appendChild(expenseCell);
     row.appendChild(amtCell);
@@ -64,9 +64,9 @@ function createExpense(Expens){
         Expens.text = newName;
         Expens.number = newAmt;
 
-        totalExpense.textContent="Total Expense : " + amount;
+        totalExpense.textContent="Total Expense : ₹ " + amount;
         expenseCell.innerText = newName;
-        amtCell.innerText = newAmt;
+        amtCell.innerText = "₹ " + newAmt;
         localStorage.setItem("Expense",JSON.stringify(Expense));
     });
 
@@ -74,7 +74,7 @@ function createExpense(Expens){
         row.remove();
 
         amount-=Number(amt);
-        totalExpense.textContent="Total Expense : " + amount;
+        totalExpense.textContent="Total Expense : ₹ " + amount;
 
         let index=Expense.indexOf(Expens);
         Expense.splice(index,1);
