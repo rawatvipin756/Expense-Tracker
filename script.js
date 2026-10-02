@@ -19,25 +19,36 @@ for(let i=0;i<Expense.length;i++){
 function createExpense(Expens){
     let name=Expens.text;
     let amt=Expens.number;
-    let tasks=document.createElement("p");
+
+    let row=document.createElement("tr");
+
+    let expenseCell=document.createElement("td");
+    let amtCell=document.createElement("td");
+    let btnCell=document.createElement("td");
+    
     let editBtn=document.createElement("button");
     let deleteBtn=document.createElement("button");
-    let box=document.createElement("div");
+
+    expenseCell.innerText = name;
+    amtCell.innerText = amt;
 
     editBtn.innerText="Edit";
     deleteBtn.innerText="Delete";
+
+    btnCell.appendChild(editBtn);
+    btnCell.appendChild(deleteBtn);
 
     editBtn.type = "button";
     deleteBtn.type = "button";
 
     amount+=Number(amt);
     totalExpense.textContent="Total Expense : " + amount;
-    tasks.innerText=name + " :  "+ amt;
 
-    box.appendChild(tasks)
-    box.appendChild(editBtn);
-    box.appendChild(deleteBtn);
-    allTasks.appendChild(box);
+    row.appendChild(expenseCell);
+    row.appendChild(amtCell);
+    row.appendChild(btnCell);
+
+    allTasks.appendChild(row);
 
     editBtn.addEventListener("click",()=> {
         let newName=prompt("Enter New Input");
@@ -54,12 +65,13 @@ function createExpense(Expens){
         Expens.number = newAmt;
 
         totalExpense.textContent="Total Expense : " + amount;
-        tasks.innerText=newName + newAmt;
+        expenseCell.innerText = newName;
+        amtCell.innerText = newAmt;
         localStorage.setItem("Expense",JSON.stringify(Expense));
     });
 
     deleteBtn.addEventListener("click",()=> {
-        box.remove();
+        row.remove();
 
         amount-=Number(amt);
         totalExpense.textContent="Total Expense : " + amount;
@@ -75,6 +87,10 @@ addBtn.addEventListener("click",()=> {
         alert("Enter valid value");
         return;
     }
+    if(inputAmt.value.trim() === ""){
+    alert("Enter amount");
+    return;
+}
     let newExpense={
         text:inputText.value.trim(),
         number:inputAmt.value

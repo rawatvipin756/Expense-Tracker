@@ -43,20 +43,16 @@ h1{
     background-color:black;
     color:white;
 }
-/* div{
-    display:flex;
-    justify-content:center;
+table{
+    width:92%;
+    margin:auto;
+    border-radius:5px;
+    padding:10px;
+    margin-bottom:20px;
 }
-div p{
-    display:flex;
-    justify-content:space-between;
+tr{
 }
-div button{
-    display:flex;
-    justify-content:flex-end;
-} */
- #allTasks p {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+table td{
+    text-align:center;
 }
+
