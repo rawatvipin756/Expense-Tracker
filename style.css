@@ -26,17 +26,6 @@ table th {
     vertical-align: middle;
     font-size: 1rem;
 }
-
-/* @media(max-width:768px){
-    .expense-container{
-        max-width:500px;
-    }
-}
-@media(max-width:400px){
-    .expense-container{
-        margin:auto;
-    }
-} */
  @media (max-width: 576px) {
     .expense-container {
         margin-top: 15px;
