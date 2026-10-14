@@ -4,34 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link rel="stylesheet" href="style.css">
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="container">
-        <header>
-            <h1>Expense Tracker</h1>
+    <section class="container expense-container">
+        <header class="text-center py-3">
+            <h1 class="fw-bold">Expense Tracker</h1>
         </header>
         <main>
             <form>
-                <p id="totalExpense">Total Expense : 0</p>
-                <container class="input">
-                    <input type="text" id="inputText" placeholder="Enter Expense">
-                    <input type="amount" id="inputAmt" placeholder="Enter Amount">
-                    <button id="addBtn" type="button">ADD</button>
-                </container>
-                <table >
-                    <thead>
-                        <tr>
-                            <th>Expense</th>
-                            <th>Amount</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="allTasks"></tbody>
-                </table>
+                <p id="totalExpense" class="text-center p-2 bg-dark text-white rounded mx-auto">Total Expense : 0</p>
+                <div class="row g-2 p-3">
+                    <div class="col-12 col-md-5">
+                        <input type="text" id="inputText" class="form-control" placeholder="Enter Expense">
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <input type="number" id="inputAmt" class="form-control" placeholder="Enter Amount">
+                    </div>
+                    <div class="col-12 col-md-52">
+                        <button id="addBtn" type="button" class="btn btn-dark w-100 fw-semibold">ADD Expense</button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped text-center align-middle">
+                        <thead>
+                            <tr>
+                                <th>Expense</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="allTasks"></tbody>
+                    </table>
+                </div>
             </form>
         </main>
     </section>

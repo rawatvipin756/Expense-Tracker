@@ -29,6 +29,9 @@ function createExpense(Expens){
     let editBtn=document.createElement("button");
     let deleteBtn=document.createElement("button");
 
+    editBtn.classList.add("btn", "btn-sm", "btn-outline-primary", "me-2");
+    deleteBtn.classList.add("btn", "btn-sm", "btn-outline-danger");
+
     expenseCell.innerText = name;
     amtCell.innerText = "₹ " + amt;
 

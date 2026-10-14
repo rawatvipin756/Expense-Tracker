@@ -1,108 +1,51 @@
 body{
     background-color:aliceblue;
 }
-.container{
-    max-width:700px;
-    width:100%;
-    border:1px solid black;
-    border-radius:10px;
-    margin:auto;
-    background-color:oldlace;
-    margin-top:40px;
+.expense-container {
+    max-width: 750px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: oldlace;
 }
-h1{
-    text-align:center;
-    font-size:40px;
-}
-#totalExpense{
-    width:90%;
-    margin:auto;
-    padding:10px;
-    text-align:center;
-    font-size:25px;
-    border:1px solid black;
-    border-radius:5px;
-    background-color:black;
-    color:white;
-}
-.input{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin:auto;
-    padding:20px;
-}
-.input input{
-    width:38%;
-    border-radius:5px;
-    border:none;
-    padding:15px;
-}
-.input button{
-    width:10%;
-    border-radius:5px;
-    background-color:black;
-    color:white;
-}
-table{
-    width:92%;
-    margin:auto;
-    border-radius:5px;
-    padding:10px;
-    margin-bottom:20px;
-}
-table tr{
-    text-align:center;
-}
-table td { 
-    padding: 14px 16px; 
-    border-bottom: 1px solid #e5e5e5; 
-    font-size: 16px; 
-}
-table th{
-    padding:20px;
-    font-size:18px;
-}
-table button{
-    border: none;
-    padding: 7px 12px;
-    border-radius: 6px; 
-    cursor: pointer; 
-    font-size: 13px; 
+#totalExpense {
+    width: 90%;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-right: 6px;
 }
-table button:first-child { 
-    background: #e8e8e8; 
-    color: #222; 
-}
-table button:last-child { 
-    background: #222; 
-    color: white; 
+table td {
+    padding: 14px 12px;
+    vertical-align: middle;
+    font-size: 1rem;
 }
 
-@media(max-width:768px){
-    .container{
+table th {
+    padding: 14px 12px;
+    vertical-align: middle;
+    font-size: 1rem;
+}
+
+/* @media(max-width:768px){
+    .expense-container{
         max-width:500px;
-    }
-    #inputText{
-        display:block;
     }
 }
 @media(max-width:400px){
-    .container{
+    .expense-container{
         margin:auto;
     }
-    .input{
-        display:grid;
-        grid-template-columns:1fr;
-        width:100%;
-        min-width:300px;
+} */
+ @media (max-width: 576px) {
+    .expense-container {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 5px;
     }
-    .input input,
-    .input button {
-        width: 90%;
-        box-sizing: border-box;
-        padding:20px;
+
+    #totalExpense {
+        width: 100%;
+        font-size: 1.25rem;
     }
 }
